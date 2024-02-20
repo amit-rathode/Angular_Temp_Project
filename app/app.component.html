@@ -1,0 +1,74 @@
+<div class="center">
+  <h1 >Hello welcome to angular</h1>
+  <p>how are you?</p>
+
+  Parent Input Box :<input type="text" #pcomponent (keyup)="0" >
+
+  <!-- parent input 2: <input type="text" #pcomponent2 (keyup)="0"> -->
+  <app-employee [PData]="pcomponent.value" ></app-employee>
+  <!-- <app-employee [pcomponent2]="pcomponent2.value"></app-employee> -->
+  <div [ngStyle]="{'background-color' : mycountry =='india' ? 'green':'red'}">Hello</div>
+
+  @for(emp of employee;track emp.id){
+    <ul>
+      <li>
+        {{emp.id}}
+        
+      </li>
+      <li>
+        {{emp.name}}
+
+      </li>
+    </ul>
+  }
+
+ <!-- 
+  <table border="1px">
+    <tr>
+      <th>emp_id</th>
+      <th> emp_name</th>
+    </tr>
+
+    @for(emp of employee;track emp.id){
+    <tr>
+      <td>{{emp.id}}</td>
+      <td>{{emp.name}}</td>
+    </tr>
+  }@empty{
+
+  }
+  </table>
+
+   -->
+
+   <button (click)='onChange()'>ClickME</button>
+
+   <br>
+
+   <br>
+   <button on-click='onChange2()'>ClickME</button>
+
+   <br>
+   <br>
+   <input type="text"  (keydown)="keydown()">
+   <br>
+   <br>
+   Enter your Name:<input type="text" #textName (keyup)="onClick(textName.value)"><br/>
+
+    Your Name : {{name}}
+
+    <br>
+    <br>
+
+   <b> your message is ! : <input type="text" [(ngModel)]="_message"></b>
+
+    <br>
+    <br>
+
+
+   <b> {{_message}}</b>
+
+    <br>
+    <br>
+
+</div>
